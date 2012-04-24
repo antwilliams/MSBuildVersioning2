@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MSBuildVersioning</RootNamespace>
-    <AssemblyName>MSBuildVersioning</AssemblyName>
+    <AssemblyName>MSBuildVersioning2</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -57,14 +57,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-		<None Include="GitVersion.base.cs"/>
-		<Compile Include="GitVersion.donotversion.cs"/>
-	</ItemGroup>
-	<UsingTask TaskName="GitVersionFile" AssemblyFile="$(MSBuildExtensionsPath)\3rdParty\MSBuildVersioning.dll" />
-  
-	<Target Name="BeforeBuild">
-		<GitVersionFile TemplateFile="GitVersion.base.cs" DestinationFile="GitVersion.donotversion.cs" />
-	</Target>
+    <None Include="GitVersion.base.cs" />
+    <Compile Include="GitVersion.donotversion.cs" />
+  </ItemGroup>
+  <UsingTask TaskName="GitVersionFile" AssemblyFile="$(MSBuildExtensionsPath)\3rdParty\MSBuildVersioning2.dll" />
+  <Target Name="BeforeBuild">
+    <GitVersionFile TemplateFile="GitVersion.base.cs" DestinationFile="GitVersion.donotversion.cs" />
+  </Target>
   <Target Name="AfterBuild">
   </Target>
 </Project>
