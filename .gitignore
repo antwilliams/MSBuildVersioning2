@@ -1,0 +1,14 @@
+[Oo]bj/
+[Bb]in/
+*.suo
+[Dd]ebug*/
+[Rr]elease*/
+*.user
+[Tt]humbs.db
+*.DS_store
+*.*sdf
+*.trx
+*.ipch
+*.mdf
+*.ldf
+*.donotversion.*
