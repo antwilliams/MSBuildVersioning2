@@ -56,7 +56,15 @@
     <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+		<None Include="GitVersion.base.cs"/>
+		<Compile Include="GitVersion.donotversion.cs"/>
+	</ItemGroup>
+	<UsingTask TaskName="GitVersionFile" AssemblyFile="$(MSBuildExtensionsPath)\3rdParty\MSBuildVersioning.dll" />
   
+	<Target Name="BeforeBuild">
+		<GitVersionFile TemplateFile="GitVersion.base.cs" DestinationFile="GitVersion.donotversion.cs" />
+	</Target>
   <Target Name="AfterBuild">
   </Target>
 </Project>
